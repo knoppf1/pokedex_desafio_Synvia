@@ -1,0 +1,26 @@
+.container-fluid{
+    background-color: black;
+}
+
+.img-fluid{
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+.img-fluid:hover{
+  background-color:blue;
+  border-radius: 50%;
+}
+
+.teste{
+  display: flex;
+  flex-direction:row;
+}
+
+.box{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+
