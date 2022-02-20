@@ -8,6 +8,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonListaComponent implements OnInit {
   itens: any[] = [];
+  result: any[] = [];
   favoritos: any[] = [];
   favorito = { nome:[],national:[]}
 
@@ -17,15 +18,16 @@ export class PokemonListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.load();
-    console.log('Load')
   }
 
   load() {
     this.pokemonService.listMarcas().subscribe((res) => {
-      console.log(typeof res);
-      console.log('res pokemon',res);
-      this.itens = res.results;
-
+      this.result = res.results;
+      this.itens = this.result.filter((thing, index, self) =>
+      index === self.findIndex((t) => (
+      t.place === thing.place && t.name === thing.name
+      ))
+      )
     })
   }
 
