@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 
+
 @Component({
   selector: 'app-pokemon-lista',
   templateUrl: './pokemon-lista.component.html',
@@ -10,7 +11,8 @@ export class PokemonListaComponent implements OnInit {
   itens: any[] = [];
   result: any[] = [];
   favoritos: any[] = [];
-  favorito = { nome:[],national:[]}
+  favorito = { nome:[],national:[]};
+
 
   constructor(
     private pokemonService: PokemonService,
@@ -31,10 +33,12 @@ export class PokemonListaComponent implements OnInit {
     })
   }
 
+
   alterarAtivo(_$event: any,  national_number : number, name: string, type: string){
     console.log("National number:", national_number,"Nome:",name, "Tipo:", type);
-    // this.favorito.nome.push(name);
-    // this.favorito.national.push(national_number)
-  }
+
+  };
+
+  save(_$event: any,  name: string, national_number:string ) { this.pokemonService.adicionar(name).subscribe(_res => {  }) };
 
 }

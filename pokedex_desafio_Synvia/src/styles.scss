@@ -1,3 +1,34 @@
-@import '~bootstrap/dist/css/bootstrap.min.css'
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.container-fluid{
+  background-color: black;
+  // color: white;
+}
+
+.img-fluid{
+background-color: aqua;
+border-radius: 50%;
+}
+
+.img-fluid:hover{
+background-color:blue;
+border-radius: 50%;
+}
+
+.teste{
+display: flex;
+flex-direction:row;
+}
+
+.box{
+display: flex;
+flex-direction:column;
+align-items: center;
+}
+
+.title{
+  color: white;
+}
+
 
 
