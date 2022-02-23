@@ -7,7 +7,8 @@
  3) Abrir pasta onde foi salva a aplicação
  4) Fazer atualilação dos pacotes rodando  comando: npm install
  5) Rodar aplicação através do comando: ng serve
- 6) Abrir página web através do endereço http://localhost:4200/  no browser
+ 6) Rodar servidor virtual através do comando: json-server --watch db.json
+ 7) Abrir página web através do endereço http://localhost:4200/  no browser
 
 
 O que foi feito no desafio:
