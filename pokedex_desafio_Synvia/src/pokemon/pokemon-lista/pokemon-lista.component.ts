@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @Component({
@@ -11,15 +16,22 @@ export class PokemonListaComponent implements OnInit {
   itens: any[] = [];
   result: any[] = [];
   favoritos: any[] = [];
-  favorito = { nome:[],national:[]};
+  cadastro: FormGroup;
 
 
   constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
     private pokemonService: PokemonService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.load();
+     this.cadastro = this.fb.group({
+      name: [''],
+      national_number: [''],
+    });
   }
 
   load() {
@@ -33,12 +45,7 @@ export class PokemonListaComponent implements OnInit {
     })
   }
 
-
-  alterarAtivo(_$event: any,  national_number : number, name: string, type: string){
-    console.log("National number:", national_number,"Nome:",name, "Tipo:", type);
-
-  };
-
-  save(_$event: any,  name: string, national_number:string ) { this.pokemonService.adicionar(name).subscribe(_res => {  }) };
-
+ save(_$event: any){this.pokemonService.adicionar(this.cadastro.value).subscribe(res => {})
+      alert("Carregou Favorito!")
+  }
 }

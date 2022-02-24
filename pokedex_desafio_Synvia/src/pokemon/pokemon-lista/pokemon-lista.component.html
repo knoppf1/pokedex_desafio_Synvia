@@ -1,30 +1,32 @@
 <div class="container-fluid flex-grow-1 container-p-y">
   <div class="card-body" >
-        <div class="box" >
+      <form [formGroup]="cadastro" >
+        <div class="box form-row" >
           <tr *ngFor="let item of itens" >
-              <div class="row align-items-center">
-                  <div class="col">
-                    <div class="card mb-3" style="width: 540px;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="{{item.sprites.normal}}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title ">Nome: {{item.name}}"</h5>
-                            <p class="card-text"> Tipo: {{item.type}}  </p>
-                            <p class="card-text"><small class="text-muted">National Number: {{item.national_number}}</small></p>
-                            <label class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" [checked]="item.ativo == 1" (change)="save($event, item.name,item.national_number)">
-                              <span class="custom-control-label"> Favorito</span>
-                          </label>
-                          </div>
+            <div class="row align-items-center form-group">
+                <div class="col">
+                  <div class="card mb-3" style="width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="{{item.sprites.normal}}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title" >Nome: {{item.name}}" </h5>
+                          <p class="card-text"> Tipo: {{item.type}}  </p>
+                          <p class="card-text" ><small class="text-muted" >National Number: {{item.national_number}}</small></p>
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" [checked]="item.ativo == 1" (change)="save($event)">
+                            <span class="custom-control-label"> Favorito</span>
+                        </label>
                         </div>
                       </div>
                     </div>
                   </div>
-              </div>
+                </div>
+            </div>
           </tr>
         </div>
+      </form>
   </div>
 </div>

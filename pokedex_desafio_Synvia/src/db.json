@@ -1,14 +1,24 @@
 {
   "favoritos": [
     {
+      "name": "Bulbasaur",
       "national_number": "001",
-      "name": "Bulbasaur"
-
+      "id": 1
     },
     {
+      "name": "Ivysaur",
       "national_number": "002",
-      "name": "Ivysaur"
+      "id": 2
+    },
+    {
+      "name": "",
+      "national_number": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "national_number": "",
+      "id": 4
     }
-
   ]
 }

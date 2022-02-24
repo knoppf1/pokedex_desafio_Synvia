@@ -14,24 +14,20 @@ export class PokemonService {
   private readonly apiUrl: string = 'http://localhost:3000/';
 
   constructor(
-    private http: HttpClient,
-    private router:Router) { }
+  private http: HttpClient,
+  private router:Router) { }
 
-    listMarcas(): Observable<any> {
-      return this.http.get(this.URL).pipe(
-        tap(pokemon =>console.log('Res lista Pokemons', pokemon))
-      );
-    }
+  listMarcas(): Observable<any> {
+    return this.http.get(this.URL).pipe(
+      tap(pokemon =>console.log('Res lista Pokemons', pokemon))
+    );
+  }
 
-    listar():Observable<any> {return this.http.get(this.apiUrl + 'favoritos').pipe(
-        tap(favoritos =>console.log('Res lista Favoritotos', favoritos))
-      );
-    }
+  listar():Observable<any> {return this.http.get(this.apiUrl + 'favoritos').pipe(
+      tap(favoritos =>console.log('Res lista Favoritotos', favoritos))
+    );
+  }
 
-    // adicionar(name: string, national_number:string ): Observable<any> {return this.http.post(this.apiUrl + 'favoritos', name, national_number);
-    // }
-
-    adicionar(data: any ): Observable<any> {return this.http.post(this.apiUrl + 'favoritos', data);
-    }
-
+  adicionar(data: any): Observable<any> {return this.http.post(this.apiUrl + 'favoritos', data);
+  }
 }
